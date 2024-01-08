@@ -1,0 +1,26 @@
+const toggleDarkMode = () => {
+    // Toggle dark mode class on the <html> element
+    document.documentElement.classList.toggle('dark', !isDarkMode);
+    setDarkMode((prevMode) => !prevMode);
+  };
+
+  Certainly! Let's break down the `toggleDarkMode` function step by step:
+
+1. `document.documentElement`: This is a reference to the root element of the HTML document, which is the `<html>` element. It allows you to access and modify properties of the entire HTML document.
+
+2. `classList`: The `classList` property is a read-only property that returns a live `DOMTokenList` collection of the class attributes of the element. It provides methods to add, remove, and toggle CSS classes on the element.
+
+3. `toggle('dark', !isDarkMode)`: The `toggle` method is used to add or remove a specified class (`'dark'` in this case) based on the second parameter (`!isDarkMode`). If the second parameter is `true`, it adds the class; if it's `false`, it removes the class.
+
+4. `!isDarkMode`: The logical NOT (`!`) operator is used to invert the value of `isDarkMode`. If `isDarkMode` is `true`, `!isDarkMode` becomes `false`, and vice versa. This ensures that the class is toggled appropriately based on the current state of `isDarkMode`.
+
+5. `setDarkMode((prevMode) => !prevMode)`: This updates the `isDarkMode` state by toggling its value. The `setDarkMode` function is called with a callback function that takes the previous state (`prevMode`) and returns the new state by negating it (`!prevMode`).
+
+Putting it all together, when the `toggleDarkMode` function is called:
+
+- It toggles the 'dark' class on the `<html>` element.
+- It updates the `isDarkMode` state to the opposite of its current value.
+
+This way, each time the function is invoked, it switches between dark and light mode, updating the global styling for the entire application.
+
+---------------------------------------------------------------------------------------------------------------------------------------
